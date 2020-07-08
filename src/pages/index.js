@@ -1,22 +1,44 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import BackgroundImage from "gatsby-background-image"
+import { graphql } from "gatsby"
 
-const IndexPage = () => (
+
+const IndexPage = (props) => {
+
+const background = {
+  width: "100%",
+  height:"100vh",
+  backgroundSize:"cover",
+  backgroundPosition:"center",
+  backgroundRepeat:"no-repeat",
+  marginBottom:"10px",
+}
+return(
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <BackgroundImage
+    fluid={props.data.gdansk.childImageSharp.fluid}
+    style={background}
+    >
+hsdkfhksdhkfs
+    </BackgroundImage>
+
   </Layout>
 )
+}
 
 export default IndexPage
+
+export const pageQuery = graphql`
+query {
+  gdansk: file(relativePath: {eq: "gdansk.jpg"}) {
+    childImageSharp {
+      fluid(maxWidth: 1000){
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+}
+`;
