@@ -2,7 +2,11 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
+import { Badge } from "reactstrap"
 import { graphql } from "gatsby"
+import Header from "../components/header"
+import Story from "../components/story"
+
 
 
 const IndexPage = (props) => {
@@ -13,7 +17,18 @@ const background = {
   backgroundSize:"cover",
   backgroundPosition:"center",
   backgroundRepeat:"no-repeat",
-  marginBottom:"10px",
+  marginBottom:"30px",
+}
+const contentBox = {
+  display:"flex",
+  height:"100%",
+  alignItems:"center",
+  color:"red",
+}
+const content = {
+  maxWidth:"700px",
+  textAlign:"center",
+  margin:"0 auto",
 }
 return(
   <Layout>
@@ -22,9 +37,14 @@ return(
     fluid={props.data.gdansk.childImageSharp.fluid}
     style={background}
     >
-hsdkfhksdhkfs
+<Header/>
+<div style={contentBox}>
+<div style={content}>
+  <h1><Badge color="danger">Наши в Троймясте</Badge></h1>
+</div>
+</div>
     </BackgroundImage>
-
+    <Story/>
   </Layout>
 )
 }
