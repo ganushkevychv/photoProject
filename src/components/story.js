@@ -2,6 +2,7 @@ import React from "react"
 import { Card, CardTitle, CardBody, CardText, CardImg} from "reactstrap"
 import back from "../images/back.png"
 const Story = () => {
+
     const card = {
         boxShadow:"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
         alignItems:"center",
@@ -12,6 +13,7 @@ const Story = () => {
     return(
 
 <div style={{textAlign:"center"}}>
+
             <Card style={card}>
             <CardImg src={back}/>
             <CardBody >
@@ -34,7 +36,8 @@ const Story = () => {
               </CardText>
             </CardBody>
             </Card>
-</div>
+            </div>
+
 
     )
 }

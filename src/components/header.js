@@ -27,6 +27,10 @@ import {
       });
     }
     render() {
+      const subMenu = {
+        color:"white",
+        textAlign:"end",
+      }
       return (
         <div className="container-menu">
           <Navbar fixed="top" light expand="sm">
@@ -37,13 +41,13 @@ import {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink style={{color:"white"}} href="/about"><Badge color="danger">About</Badge></NavLink>
+                  <NavLink style={subMenu} href="/about"><Badge color="danger">About</Badge></NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink style={{color:"white"}} href="/info"><Badge color="danger">Info</Badge></NavLink>
+                  <NavLink style={subMenu}  href="/info"><Badge color="danger">Info</Badge></NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink style={{color:"white"}} href="/contact"><Badge color="danger">Contacts</Badge></NavLink>
+                  <NavLink style={subMenu}  href="/contact"><Badge color="danger">Contacts</Badge></NavLink>
                 </NavItem>
               </Nav>
             </Collapse>   
